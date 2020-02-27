@@ -2,19 +2,41 @@
 //
 
 #include <iostream>
+#include "List.h"
+
+
+template<typename T>
+void increment(T& item);
+
+
+void show(Item& item);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	List mylist;
+	mylist.push(14);
+	mylist.push(55);
+
+	Item myItem = 14;
+	mylist.push(myItem);
+
+	//mylist.show_list();
+
+	mylist.visit_every_item(show);
+
+	system("pause");
 }
 
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
 
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
+
+template<typename T>
+void increment(T& item)
+{
+	item++;
+}
+
+
+void show(Item& item)
+{
+	std::cout << item << std::endl;
+}

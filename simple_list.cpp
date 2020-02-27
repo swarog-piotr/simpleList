@@ -20,10 +20,13 @@ int main()
 	Item myItem = 14;
 	mylist.push(myItem);
 
-	//mylist.show_list();
+	
 
 	mylist.visit_every_item(show);
-
+	mylist.visit_every_item(increment);
+	mylist.visit_every_item(show);
+	
+	
 	system("pause");
 }
 

@@ -23,7 +23,9 @@ bool List::full() const
 
 void List::visit_every_item(void(*pf)(Item&))
 {
-	pf(items[0]);
+	for (int i = 0; i < top_index; i++) {
+		pf(items[i]);
+	}
 }
 
 void List::show_list()
